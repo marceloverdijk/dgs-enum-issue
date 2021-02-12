@@ -1,0 +1,25 @@
+type Query {
+    races: [Race!]!
+    race(id: ID!): Race
+    circuits: [Circuit!]!
+    circuit(id: ID!): Circuit
+}
+
+type Race {
+    id: Int!
+    year: Int!
+    rount: Int!
+    circuit: Circuit!
+    circuitType: CircuitType!
+}
+
+type Circuit {
+    id: Int
+    name: String
+    type: CircuitType!
+}
+
+enum CircuitType {
+    RACE
+    ROAD
+}
